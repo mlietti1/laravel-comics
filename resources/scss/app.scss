@@ -1,1 +1,67 @@
-@import '~bootstrap/scss/bootstrap'
+
+@use 'partials/mixin' as *;
+@use 'partials/variables' as *;
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+    .container {
+      @include spaceBetween;
+      .logo {
+      @include centerFlex('vertical');
+        img {
+        width: 80px;
+        }
+      }
+
+      nav {
+        ul {
+          @include centerFlex('vertical');
+          text-transform: uppercase;
+          li {
+            margin: 0 1rem;
+            a {
+              font-weight: 700;
+              display: inline-block;
+              color: black;
+              padding: 3rem 0;
+              border-bottom: 5px solid transparent;
+              &:hover {
+                color: $primary-color;
+                border-bottom: 5px solid $primary-color;
+              }
+              &.active{
+                border-bottom: 5px solid $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
